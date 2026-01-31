@@ -34,7 +34,7 @@ export default function DailyLog() {
         <label>Date</label>
         <input type="date" name="date" value={form.date} onChange={updateField} />
 
-        <label>Job Name</label>
+
   <label>Job Name & Job Number</label>
 <input
   name="job"
