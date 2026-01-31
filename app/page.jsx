@@ -19,11 +19,24 @@ export default function DailyLog() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function submitLog(e) {
-    e.preventDefault();
-    alert("Daily Log submitted (email coming next).");
-    console.log(form);
+async function submitLog(e) {
+  e.preventDefault();
+
+  const res = await fetch("/api/send-log", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form),
+  });
+
+  if (res.ok) {
+    alert("Daily Log submitted and emailed successfully.");
+  } else {
+    alert("There was an error sending the daily log.");
   }
+}
+
 
   return (
     <main style={{ maxWidth: 700, margin: "auto", padding: 20 }}>
