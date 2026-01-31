@@ -35,7 +35,15 @@ export default function DailyLog() {
         <input type="date" name="date" value={form.date} onChange={updateField} />
 
         <label>Job Name</label>
-        <input name="job" value={form.job} onChange={updateField} required />
+  <label>Job Name & Job Number</label>
+<input
+  name="job"
+  placeholder="Example: St. Mary’s Hospital – Job #24-017"
+  value={form.job}
+  onChange={updateField}
+  required
+/>
+
 
         <label>Foreman Name</label>
         <input name="foreman" value={form.foreman} onChange={updateField} required />
